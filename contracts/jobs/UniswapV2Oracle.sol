@@ -1,3 +1,9 @@
+modifier keep() {
+  require(KPR.isKeeper(msg.sender), "::isKeeper: keeper is not registered");
+  _;
+  KPR.worked(msg.sender);
+}
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.12;
 
